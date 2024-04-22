@@ -1,4 +1,6 @@
 "use client";
+
+// Todo import components
 import React from "react";
 
 import Form from "@/components/Form";
@@ -6,6 +8,7 @@ import Header from "@/components/Header";
 import TODOHero from "@/components/TODOHero";
 import TODOList from "@/components/TODOList";
 
+// Todo create the page with the components imported
 function Home() {
   const [todos, setTodos] = React.useState([]);
 

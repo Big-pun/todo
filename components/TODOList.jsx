@@ -1,9 +1,10 @@
 import React from "react";
 
+// Todo create the list of todos
 function TODOList({ todos, setTodos }) {
   return (
     <ol className="todo_list">
-      {todos && todos.length > 0 ? (
+      {todos && todos.length > 0 ? ( 
         todos?.map((item, index) => (
           <Item key={index} item={item} todos={todos} setTodos={setTodos} />
         ))
@@ -13,12 +14,12 @@ function TODOList({ todos, setTodos }) {
     </ol>
   );
 }
-
+// Todo create the todo item 
 function Item({ item, todos, setTodos }) {
   const [editing, setEditing] = React.useState(false);
   const inputRef = React.useRef(null);
 
-  const completeTodo = () => {
+  const completeTodo = () => { // Function to mark todo as completed
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
         todo.id === item.id
@@ -32,11 +33,11 @@ function Item({ item, todos, setTodos }) {
     localStorage.setItem("todos", updatedTodos);
   };
 
-  const handleEdit = () => {
+  const handleEdit = () => { // Function to edit todo
     setEditing(true);
   };
 
-  React.useEffect(() => {
+  React.useEffect(() => { 
     if (editing && inputRef.current) {
       inputRef.current.focus();
 
@@ -48,7 +49,7 @@ function Item({ item, todos, setTodos }) {
     }
   }, [editing]);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e) => { // Function to handle input change
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
         todo.id === item.id ? { ...todo, title: e.target.value } : todo
@@ -56,7 +57,7 @@ function Item({ item, todos, setTodos }) {
     );
   };
 
-  const handleInputSubmit = (event) => {
+  const handleInputSubmit = (event) => { // Function to handle input submit
     event.preventDefault();
 
     // Update localStorage after editing todo
@@ -66,7 +67,7 @@ function Item({ item, todos, setTodos }) {
     setEditing(false);
   };
 
-  const handleInputBlur = () => {
+  const handleInputBlur = () => { // Function to handle input blur
     // Update localStorage after editing todo
     const updatedTodos = JSON.stringify(todos);
     localStorage.setItem("todos", updatedTodos);
@@ -74,7 +75,7 @@ function Item({ item, todos, setTodos }) {
     setEditing(false);
   };
 
-  const handleDelete = () => {
+  const handleDelete = () => { // Function to delete todo
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== item.id));
 
     // Update localStorage after deleting todo
@@ -84,7 +85,7 @@ function Item({ item, todos, setTodos }) {
     localStorage.setItem("todos", updatedTodos);
   };
 
-  return (
+  return ( // Return the todo item
     <li id={item?.id} className="todo_item">
       {editing ? (
         <form className="edit-form" onSubmit={handleInputSubmit}>
