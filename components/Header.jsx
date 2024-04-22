@@ -2,11 +2,11 @@
 // todo create a functional component called Header
 function Header() {
     return (
-        <>  
-        <svg>
-            <path d="" />
-        </svg>
-        <h1>Todo App</h1>
+        <>
+            <svg>
+                <path d="" />
+            </svg>
+            <h1>Todo App</h1>
         </>
     );
 }

@@ -1,5 +1,5 @@
 // Todo create function component called TODOHero
-function TODOHero({todos_completed, total_todos}) {
+function TODOHero({ todos_completed, total_todos }) {
     return (
         <section>
             <div>
