@@ -56,7 +56,7 @@ function Item({ item, todos, setTodos }) {
     );
   };
 
-  const handleInpuSubmit = (event) => {
+  const handleInputSubmit = (event) => {
     event.preventDefault();
 
     // Update localStorage after editing todo
@@ -87,7 +87,7 @@ function Item({ item, todos, setTodos }) {
   return (
     <li id={item?.id} className="todo_item">
       {editing ? (
-        <form className="edit-form" onSubmit={handleInpuSubmit}>
+        <form className="edit-form" onSubmit={handleInputSubmit}>
           <label htmlFor="edit-todo">
             <input
               ref={inputRef}
