@@ -1,13 +1,9 @@
 // Todo create list component
-
 function TODOList() {
     return <ol className="todo_list"> {/* <li> list goes here */}</ol>;
 }
-// Todo export the list component
-export default TODOList;
 
 // Todo create list item component
-
 function Item({ item }) {
     return (
         <li id={item.id} className="todo_item">
@@ -34,3 +30,19 @@ function Item({ item }) {
         </li>
     );
 }
+
+// Todo function to use the list item component
+function TODOList({ todos }) {
+    return (
+        <ol className="todo_list">
+            {todos && todos.length > 0 ? (
+                todos?.map((item, index) => <Item key={index} item={item} />)
+            ) : (
+                <p> Seems lonely in here, what are you up to?</p>
+            )}
+        </ol>
+    );
+}
+
+// Todo export the list component
+export default TODOList;
