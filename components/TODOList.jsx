@@ -1,8 +1,3 @@
-// Todo create list component
-function TODOList() {
-    return <ol className="todo_list"> {/* <li> list goes here */}</ol>;
-}
-
 // Todo create list item component
 function Item({ item }) {
     return (

@@ -1,3 +1,4 @@
+'use client';
 // Todo create the form component
 function Form() {
     const handleSubmit = (event) => {
