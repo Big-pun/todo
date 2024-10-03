@@ -2,7 +2,9 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  
+  basePath: '/todo',
+  assetPrefix: '/todo/',
+  trailingSlash: true,
 };
 
 export default nextConfig;
