@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: "/todo",
-    output: "export",
-    reactStrictMode: true,
+  output: 'export',
+  // autres options de configuration si nécessaire
 };
 
 export default nextConfig;
