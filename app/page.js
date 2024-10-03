@@ -7,6 +7,7 @@ import Form from "@/components/Form";
 import Header from "@/components/Header";
 import TODOHero from "@/components/TODOHero";
 import TODOList from "@/components/TODOList";
+import "./styles.css";
 
 // Todo create the page with the components imported
 function Home() {
